@@ -1,0 +1,15 @@
+<h1>Teste API</h1>
+<br>
+<button onclick="buscarimagem()">chamar api</button>
+<br>
+<img id="foto">
+
+<script>
+    async function buscarimagem() {
+        const resposta = await fetch("https://dog.ceo/api/breeds/image/random");
+        const dados = await resposta.json();
+        document.getElementById("foto").src = dados.message;
+    }
+</script>
+
+<link rel="stylesheet" href="style.css">
